@@ -1,19 +1,23 @@
 #include <iostream>
 #include <locale>
 #include <ctime>
-#include <string>
 
 using namespace std;
+
 int mas[3][3];
 int a = 0;
 int b = 0;
 char name1[30];
 char name2[30];
 
-void pravilo() {
+void pravilo()
+{
 	cout << "Каждый игрок ходит по очереди." << endl;
+	cout << endl;
 	cout << "Первым ходит игрок1 и у него код '1'." << endl;
+	cout << endl;
 	cout << "После 1 игрока, ходит игрок2 и у него код '2'." << endl;
+	cout << endl;
 	cout << "[1] [2] [3] " << endl;
 	cout << "[4] [5] [6] " << endl;
 	cout << "[7] [8] [9] " << endl;
@@ -21,23 +25,32 @@ void pravilo() {
 
 void name()
 {
+	cout << endl;
 	cout << "Введи свое имя, игрок 1: ";
 	cin.getline(name1, 30);
+	cout << endl;
 	cout << "Введи свое имя, игрок 2: ";
 	cin.getline(name2, 30);
+	cout << endl;
 }
 
-void map() {
-	for (int i = 0; i < 3; i++) {
-		for (int j = 0; j < 3; j++) {
+void map()
+{
+	cout << endl;
+	for (int i = 0; i < 3; i++) 
+	{
+		for (int j = 0; j < 3; j++) 
+		{
 			mas[i][j] = 0;
 			cout << mas[i][j] << " ";
 		}
 		cout << endl;
 	}
+	cout << endl;
 }
 
-void game() {
+void game() 
+{
 	if (a == 1) {
 		mas[0][0] = 1;
 	}
@@ -65,12 +78,10 @@ void game() {
 	else if (a == 9) {
 		mas[2][2] = 1;
 	}
-	else {
-		cout << "nevernoe chislo" << endl;
-	}
 }
 
-void game1() {
+void game1()
+{
 	if (b == 1) {
 		mas[0][0] = 2;
 	}
@@ -98,48 +109,51 @@ void game1() {
 	else if (b == 9) {
 		mas[2][2] = 2;
 	}
-	else {
-		cout << "nevernoe chislo" << endl;
-	}
 }
 
 
-void obn() {
-	for (int i = 0; i < 3; i++) {
-		for (int j = 0; j < 3; j++) {
+void obn()
+{
+	cout << endl;
+	for (int i = 0; i < 3; i++) 
+	{
+		for (int j = 0; j < 3; j++) 
+		{
 			cout << mas[i][j] << " ";
 		}
 		cout << endl;
 	}
+	cout << endl;
 }
 
 int main()
 {
 	setlocale(LC_ALL, "Russian");
+	srand(time(NULL));
+
 	pravilo();
 	name();
 	map();
+
 	int s = 0;
 	int s1 = 0;
 	int k = 0;
-	int g = 0;
 	int e = 0;
-	srand(time(NULL));
-	int n1 = 0;
 
 	int q = 0;
 	q = rand() % 2 + 1;
 
 	if (q == 1)
 	{
-		cout << "Первым ходит игрок: " << name1 << endl;
+		cout << "Первым ходит игрок: " << name1 << " (1)" << endl;
+		cout << endl;
 		for (int s1 = 0; s1 <= 4; s1++)
 		{
 			while (e != 1)
 			{
 				cin >> a;
 				a--;
-				if (a >= 0 && a <= 8 && mas[a / 3][a % 3] == 0) //ТУТ
+				if (a >= 0 && a <= 8 && mas[a / 3][a % 3] == 0)
 				{
 					a++;
 					game();
@@ -175,7 +189,9 @@ int main()
 				break;
 				break;
 			}
-
+			cout << endl;
+			cout << "Теперь ходит игрок: " << name2 << " (2)" << endl;
+			cout << endl;
 			while (e != 1)
 			{
 				cin >> b;
@@ -216,12 +232,16 @@ int main()
 				break;
 				break;
 			}
+			cout << endl;
+			cout << "Теперь ходит игрок: " << name1 << " (1)" << endl;
+			cout << endl;
 		}
 	}
 
 	else if (q == 2)
 	{
-		cout << "Первым ходит игрок: " << name2 << endl;
+		cout << "Первым ходит игрок: " << name2 << " (2)" << endl;
+		cout << endl;
 		for (int s = 0; (s <= 4); s++)
 		{
 			while (e != 1)
@@ -263,6 +283,9 @@ int main()
 				break;
 
 			}
+			cout << endl;
+			cout << "Теперь ходит игрок: " << name1 << " (1)" << endl;
+			cout << endl;
 			while (e != 1)
 			{
 				cin >> a;
@@ -301,6 +324,9 @@ int main()
 				break;
 				break;
 			}
+			cout << endl;
+			cout << "Теперь ходит игрок: " << name2 << " (2)" << endl;
+			cout << endl;
 		}
 	}
 
@@ -316,7 +342,7 @@ int main()
 	{
 		cout << "Ничья " << endl;
 	}
-
+	cout << endl;
 	system("pause");
 	return 0;
 }
