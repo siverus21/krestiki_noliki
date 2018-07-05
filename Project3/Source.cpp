@@ -34,21 +34,6 @@ void name()
 	cout << endl;
 }
 
-void map()
-{
-	cout << endl;
-	for (int i = 0; i < 3; i++) 
-	{
-		for (int j = 0; j < 3; j++) 
-		{
-			mas[i][j] = 0;
-			cout << mas[i][j] << " ";
-		}
-		cout << endl;
-	}
-	cout << endl;
-}
-
 void game() 
 {
 	if (a == 1) {
@@ -133,7 +118,7 @@ int main()
 
 	pravilo();
 	name();
-	map();
+	obn();
 
 	int s = 0;
 	int s1 = 0;
@@ -196,7 +181,7 @@ int main()
 			{
 				cin >> b;
 				b--;
-				if (b >= 0 && b <= 8 && mas[b / 3][b % 3] == 0) //ТУТ
+				if (b >= 0 && b <= 8 && mas[b / 3][b % 3] == 0) 
 				{
 					b++;
 					game1();
@@ -248,7 +233,7 @@ int main()
 			{
 				cin >> b;
 				b--;
-				if (b >= 0 && b <= 8 && mas[b / 3][b % 3] == 0) //ТУТ
+				if (b >= 0 && b <= 8 && mas[b / 3][b % 3] == 0) 
 				{
 					b++;
 					game1();
@@ -290,7 +275,7 @@ int main()
 			{
 				cin >> a;
 				a--;
-				if (a >= 0 && a <= 8 && mas[a / 3][a % 3] == 0) //ТУТ
+				if (a >= 0 && a <= 8 && mas[a / 3][a % 3] == 0) 
 				{
 					a++;
 					game();
