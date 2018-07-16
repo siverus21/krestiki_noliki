@@ -34,7 +34,19 @@ void name()
 	cout << endl;
 }
 
-void game() 
+void new_name() 
+{
+	cout << endl;
+	cout << "Введи свое имя, игрок 1: ";
+	cin.getline(name1, 30);
+	cin.getline(name1, 30);
+	cout << endl;
+	cout << "Введи свое имя, игрок 2: ";
+	cin.getline(name2, 30);
+	cout << endl;
+}
+
+void game()
 {
 	if (a == 1) {
 		mas[0][0] = 1;
@@ -100,9 +112,9 @@ void game1()
 void obn()
 {
 	cout << endl;
-	for (int i = 0; i < 3; i++) 
+	for (int i = 0; i < 3; i++)
 	{
-		for (int j = 0; j < 3; j++) 
+		for (int j = 0; j < 3; j++)
 		{
 			cout << mas[i][j] << " ";
 		}
@@ -111,7 +123,7 @@ void obn()
 	cout << endl;
 }
 
-void obnylenie() 
+void obnylenie()
 {
 	cout << endl;
 	for (int i = 0; i < 3; i++)
@@ -138,7 +150,7 @@ int main()
 	int k1 = 1;
 	while (end_game != 1)
 	{
-		pravilo(); 
+		pravilo();
 		if (k1 == 1)
 		{
 			name();
@@ -146,7 +158,7 @@ int main()
 		}
 		else if (k1 != 1)
 		{
-			name();
+			new_name();
 			obnylenie();
 		}
 		k1++;
